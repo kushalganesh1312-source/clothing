@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELORA — Wear Your Next Era | Modern Fashion House</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Display) + Plus Jakarta Sans (Clean Modern UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#0F0F12',
+            obsidian: '#17171C',
+            ivory: '#F7F4EF',
+            cream: '#EFECE6',
+            cobalt: '#2D46FF',
+            coral: '#FF5338',
+            lime: '#D4FF33',
+            lavender: '#C8B6FF',
+            burgundy: '#4A1525'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-ivory: #F7F4EF;
+      --text-charcoal: #0F0F12;
+    }
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--text-charcoal);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    /* Custom Scrollbar Hiding for Horizontal Carousels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Subtle noise grain overlay for editorial texture */
+    .bg-grain {
+      background-image: radial-gradient(rgba(15, 15, 18, 0.06) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    /* Rotating circular badge animation */
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spinSlow 18s linear infinite;
+    }
+    /* Floating subtle animation */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+    /* Hotspot pulse */
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 255, 51, 0.8); }
+      70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(212, 255, 51, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 255, 51, 0); }
+    }
+    .hotspot-dot {
+      animation: pulseRing 2s infinite;
+    }
+    /* Product Card Image Zoom */
+    .product-card:hover .product-img {
+      transform: scale(1.045);
+    }
+    .product-card:hover .quick-add-bar {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cobalt selection:text-white">
+
+  <!-- ==========================================
+       ANNOUNCEMENT STRIP
+  =========================================== -->
+  <div class="bg-charcoal text-ivory text-[11px] tracking-[0.22em] uppercase py-2.5 px-4 text-center font-medium border-b border-white/10">
+    <span>FREE SHIPPING ON ORDERS OVER ₹2,999</span>
+    <span class="mx-3 text-lime">·</span>
+    <span>EASY 7-DAY RETURNS</span>
+    <span class="mx-3 text-lime hidden sm:inline">·</span>
+    <span class="hidden sm:inline text-lavender">EDITION 04 / ARCHIVE DROP LIVE NOW</span>
+  </div>
+
+  <!-- ==========================================
+       STICKY NAVIGATION BAR
+  =========================================== -->
+  <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-ivory/85 backdrop-blur-md border-b border-charcoal/10 py-5">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 flex items-center justify-between">
+      
+      <!-- Left: Brand Wordmark & Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-full bg-charcoal text-ivory flex items-center justify-center font-serif italic text-lg font-bold group-hover:bg-cobalt transition-colors">
+          V
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.18em] leading-none">VELORA</span>
+          <span class="text-[8px] tracking-[0.3em] uppercase text-charcoal/60 mt-0.5">ATELIER · STUDIO</span>
+        </div>
+      </a>
+
+      <!-- Center: Desktop Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-[0.18em] uppercase">
+        <a href="#new-arrivals" class="hover:text-cobalt transition-colors py-1">Shop</a>
+        <a href="#new-arrivals" class="hover:text-cobalt transition-colors py-1 flex items-center gap-1">
+          New In <span class="w-1.5 h-1.5 rounded-full bg-cobalt"></span>
+        </a>
+        <a href="#categories" class="hover:text-cobalt transition-colors py-1">Women</a>
+        <a href="#categories" class="hover:text-cobalt transition-colors py-1">Men</a>
+        <a href="#featured-collection" class="hover:text-cobalt transition-colors py-1">Collections</a>
+        <a href="#special-offer" class="text-coral hover:text-charcoal transition-colors py-1 font-bold">Sale</a>
+      </nav>
+
+      <!-- Right: Utility Icons -->
+      <div class="flex items-center gap-3 sm:gap-5">
+        <button onclick="showToast('Search bar activated — Press ESC to close')" aria-label="Search" class="p-2 hover:bg-charcoal/5 rounded-full transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+        </button>
+        <button onclick="showToast('Member Portal: Signed in as Guest')" aria-label="Account" class="p-2 hover:bg-charcoal/5 rounded-full transition-colors hidden sm:inline-flex">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+        </button>
+        <button onclick="showToast('Saved to your personal Lookbook Wishlist')" aria-label="Wishlist" class="p-2 hover:bg-charcoal/5 rounded-full transition-colors relative">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+          <span id="wishlist-badge" class="absolute top-1 right-1 w-2 h-2 rounded-full bg-coral hidden"></span>
+        </button>
+        <button onclick="toggleCart()" aria-label="Shopping Bag" class="flex items-center gap-2 bg-charcoal text-ivory px-3.5 py-2 rounded-full text-xs font-semibold tracking-wider hover:bg-cobalt transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z"/></svg>
+          <span id="cart-count">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO SECTION (ASYMMETRIC EDITORIAL)
+  =========================================== -->
+  <section class="relative overflow-hidden bg-grain pt-6 pb-16 lg:py-16 border-b border-charcoal/10">
+    <!-- Subtle Ambient Glow Blobs -->
+    <div class=" -top-24 -left-24 w-96 h-96 bg-lavender/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class=" top-1/2 right-10 w-80 h-80 bg-cobalt/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left Column: Editorial Typography (7 Cols) -->
+        <div class="lg:col-span-6 xl:col-span-6 z-10 space-y-6">
+          <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-charcoal/5 border border-charcoal/15">
+            <span class="w-2 h-2 rounded-full bg-cobalt animate-ping"></span>
+            <span class="text-[11px] font-semibold tracking-[0.25em] uppercase text-charcoal">NEW SEASON / 2026 · EDITION 04</span>
+          </div>
+
+          <h1 class="font-serif text-6xl sm:text-7xl xl:text-[92px] leading-[0.9] tracking-tight font-semibold text-charcoal">
+            DRESS <br/>
+            <span class="italic font-normal text-cobalt">OUTSIDE</span> <br/>
+            THE LINES.
+          </h1>
+
+          <p class="text-base sm:text-lg text-charcoal/75 max-w-md leading-relaxed font-normal">
+            Architectural silhouettes meet high-saturation street tailoring. Engineered for fluid movement, unapologetic presence, and your next era.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#new-arrivals" class="group relative inline-flex items-center gap-3 bg-charcoal text-ivory px-8 py-4 rounded-full text-xs font-semibold tracking-[0.2em] uppercase overflow-hidden hover:bg-cobalt transition-all duration-300 shadow-lg shadow-charcoal/10">
+              <span>SHOP WOMEN</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <a href="#featured-collection" class="inline-flex items-center gap-3 bg-transparent border border-charcoal text-charcoal px-8 py-4 rounded-full text-xs font-semibold tracking-[0.2em] uppercase hover:bg-charcoal hover:text-ivory transition-all duration-300">
+              <span>EXPLORE COLLECTION</span>
+            </a>
+          </div>
+
+          <!-- Editorial Footnote Specs -->
+          <div class="pt-8 grid grid-cols-3 gap-4 border-t border-charcoal/10 max-w-lg text-xs">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/50 block">TAGLINE</span>
+              <span class="font-semibold text-charcoal mt-0.5 block">"WEAR YOUR NEXT ERA."</span>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/50 block">FABRICATION</span>
+              <span class="font-semibold text-charcoal mt-0.5 block">100% Heavy Organic Twill</span>
+            </div>
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/50 block">ORIGIN</span>
+              <span class="font-semibold text-charcoal mt-0.5 block">Milan / Mumbai Studio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Asymmetric Campaign Imagery & Floating Badges (6 Cols) -->
+        <div class="lg:col-span-6 xl:col-span-6 relative">
+          <div class="relative mx-auto max-w-lg lg:max-w-none">
+            
+            <!-- Main Arch/Rounded Campaign Frame -->
+            <div class="relative rounded-[2.2rem] overflow-hidden shadow-2xl border-2 border-charcoal/10 aspect-[4/5] bg-obsidian group">
+              <img 
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85" 
+                alt="Velora Editorial Campaign Model" 
+                class="w-full h-full object-cover object-top transition-transform duration-1000 ease-out group-hover:scale-105"
+              />
+              <div class="inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent"></div>
+              
+              <!-- Overlay Editorial Caption inside photo -->
+              <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+                <div>
+                  <span class="text-[10px] tracking-[0.25em] uppercase bg-lime text-charcoal px-2.5 py-1 rounded-full font-bold">LOOK 01 / RUNWAY</span>
+                  <p class="font-serif italic text-2xl mt-2">Chromatic Utility Trench & Satin Slip</p>
+                </div>
+                <span class="text-xs font-mono opacity-80">[№ 004-A]</span>
+              </div>
+            </div>
+
+            <!-- Floating Secondary Editorial Inset Card -->
+            <div class="hidden sm:block absolute -bottom-8 -left-10 w-48 rounded-2xl overflow-hidden shadow-xl border-4 border-ivory bg-charcoal animate-float">
+              <img 
+                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" 
+                alt="Secondary Campaign Detail" 
+                class="w-full h-36 object-cover"
+              />
+              <div class="p-3 bg-charcoal text-ivory">
+                <p class="text-[10px] tracking-[0.2em] uppercase text-lime">NEW DROP</p>
+                <p class="text-xs font-medium truncate mt-0.5">Cobalt Structured Blazer</p>
+                <p class="text-xs text-ivory/70 font-semibold mt-0.5">₹4,299</p>
+              </div>
+            </div>
+
+            <!-- Floating Rotating Circular Stamp Badge -->
+            <div class="absolute -top-6 -right-4 sm:right-6 w-28 h-28 rounded-full bg-lime text-charcoal flex items-center justify-center shadow-xl border border-charcoal/20">
+              <svg class="w-24 h-24 animate-spin-slow" viewBox="0 0 100 100">
+                <path id="circlePath" fill="none" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+                <text class="text-[9.5px] font-bold uppercase tracking-[0.19em]" fill="#0F0F12">
+                  <textPath href="#circlePath">VELORA STUDIO • WEAR YOUR NEXT ERA •</textPath>
+                </text>
+              </svg>
+              <span class="absolute font-serif italic font-bold text-xl">26</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. CATEGORY SECTION (VISUAL EDITORIAL CARDS)
+  =========================================== -->
+  <section id="categories" class="py-16 sm:py-24 max-w-[1440px] mx-auto px-4 sm:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-cobalt block mb-2">CURATED DEPARTMENTS</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold tracking-tight">EXPLORE BY SILHOUETTE</h2>
+      </div>
+      <p class="text-xs uppercase tracking-[0.2em] text-charcoal/60">11 SIGNATURE CATEGORIES · SCROLL OR SELECT</p>
+    </div>
+
+    <!-- Primary Featured 4-Card Visual Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+      
+      <!-- Category Card 1: Women -->
+      <a href="#new-arrivals" class="group relative h-80 rounded-3xl overflow-hidden bg-charcoal block shadow-sm">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Women" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent group-hover:from-cobalt/80 transition-colors duration-500"></div>
+        <div class="absolute top-4 left-4">
+          <span class="text-[10px] tracking-[0.2em] uppercase bg-ivory/90 text-charcoal px-3 py-1 rounded-full font-bold">01 / 142 ITEMS</span>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-ivory">
+          <span class="font-serif text-3xl italic">Women</span>
+          <span class="w-10 h-10 rounded-full bg-ivory text-charcoal flex items-center justify-center group-hover:translate-x-1.5 group-hover:bg-lime transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- Category Card 2: Men -->
+      <a href="#new-arrivals" class="group relative h-80 rounded-3xl overflow-hidden bg-charcoal block shadow-sm">
+        <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80" alt="Men" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent group-hover:from-coral/80 transition-colors duration-500"></div>
+        <div class="absolute top-4 left-4">
+          <span class="text-[10px] tracking-[0.2em] uppercase bg-ivory/90 text-charcoal px-3 py-1 rounded-full font-bold">02 / 98 ITEMS</span>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-ivory">
+          <span class="font-serif text-3xl italic">Men</span>
+          <span class="w-10 h-10 rounded-full bg-ivory text-charcoal flex items-center justify-center group-hover:translate-x-1.5 group-hover:bg-lime transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- Category Card 3: New Arrivals -->
+      <a href="#new-arrivals" class="group relative h-80 rounded-3xl overflow-hidden bg-charcoal block shadow-sm">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="New Arrivals" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent group-hover:from-charcoal/90 transition-colors duration-500"></div>
+        <div class="absolute top-4 left-4">
+          <span class="text-[10px] tracking-[0.2em] uppercase bg-lime text-charcoal px-3 py-1 rounded-full font-bold">03 / JUST IN</span>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-ivory">
+          <span class="font-serif text-3xl italic">New Arrivals</span>
+          <span class="w-10 h-10 rounded-full bg-ivory text-charcoal flex items-center justify-center group-hover:translate-x-1.5 group-hover:bg-lime transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- Category Card 4: Denim -->
+      <a href="#new-arrivals" class="group relative h-80 rounded-3xl overflow-hidden bg-charcoal block shadow-sm">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80" alt="Denim" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent group-hover:from-cobalt/80 transition-colors duration-500"></div>
+        <div class="absolute top-4 left-4">
+          <span class="text-[10px] tracking-[0.2em] uppercase bg-ivory/90 text-charcoal px-3 py-1 rounded-full font-bold">04 / RAW & WASHED</span>
+        </div>
+        <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-ivory">
+          <span class="font-serif text-3xl italic">Denim</span>
+          <span class="w-10 h-10 rounded-full bg-ivory text-charcoal flex items-center justify-center group-hover:translate-x-1.5 group-hover:bg-lime transition-all">→</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Remaining 7 Categories as Interactive Image Pill Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3.5">
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80" alt="Dresses" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Dresses</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" alt="Tops" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Tops</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80" alt="Shirts" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Shirts</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80" alt="Jackets" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Jackets</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80" alt="Bottoms" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Bottoms</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=400&q=80" alt="Accessories" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Accessories</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+
+      <a href="#new-arrivals" class="group relative h-32 rounded-2xl overflow-hidden flex items-end p-3.5 bg-charcoal col-span-2 sm:col-span-1">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=400&q=80" alt="Footwear" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-110 transition-transform duration-500"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+        <div class="relative z-10 flex items-center justify-between w-full text-ivory">
+          <span class="text-xs font-bold tracking-wider uppercase">Footwear</span>
+          <span class="text-lime group-hover:translate-x-1 transition-transform">→</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       9, 10, 11. NEW ARRIVALS ("JUST DROPPED")
+  =========================================== -->
+  <section id="new-arrivals" class="py-16 sm:py-24 bg-cream/70 border-y border-charcoal/10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      
+      <!-- Header & Filter Tabs + Carousel Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-coral mb-2">
+            <span>●</span> <span>SEASON 04 / CAPSULE</span>
+          </div>
+          <h2 class="font-serif text-5xl sm:text-6xl font-semibold tracking-tight">JUST DROPPED</h2>
+          <p class="text-charcoal/70 text-sm sm:text-base mt-2">Pieces designed for the next version of you.</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button onclick="filterNewArrivals('all')" id="tab-all" class="px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-charcoal text-ivory transition-all">All Drops (8)</button>
+          <button onclick="filterNewArrivals('Women')" id="tab-Women" class="px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-ivory text-charcoal border border-charcoal/15 hover:border-charcoal transition-all">Women</button>
+          <button onclick="filterNewArrivals('Men')" id="tab-Men" class="px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-ivory text-charcoal border border-charcoal/15 hover:border-charcoal transition-all">Men</button>
+          
+          <div class="flex items-center gap-2 ml-2">
+            <button onclick="scrollCarousel('new-arrivals-track', -360)" aria-label="Previous" class="w-11 h-11 rounded-full border border-charcoal/20 bg-ivory flex items-center justify-center hover:bg-charcoal hover:text-ivory transition-colors">←</button>
+            <button onclick="scrollCarousel('new-arrivals-track', 360)" aria-label="Next" class="w-11 h-11 rounded-full border border-charcoal/20 bg-ivory flex items-center justify-center hover:bg-charcoal hover:text-ivory transition-colors">→</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Product Carousel -->
+      <div id="new-arrivals-track" class="flex gap-6 overflow-x-auto no-scrollbar pb-4 snap-x snap-mandatory">
+        <!-- Populated dynamically via JS below so color swatch switching & filtering work seamlessly -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       12. SPECIAL OFFER SECTION (MID-SEASON DROP)
+  =========================================== -->
+  <section id="special-offer" class="py-16 sm:py-24 max-w-[1440px] mx-auto px-4 sm:px-8">
+    <div class="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-cobalt via-[#4F35FF] to-coral text-ivory p-8 sm:p-14 lg:p-20 shadow-2xl">
+      
+      <!-- Giant Decorative Low-Opacity Percentage Behind Content -->
+      <div class="absolute -right-6 -bottom-16 font-serif font-bold text-[180px] sm:text-[290px] lg:text-[380px] leading-none text-white/10 select-none pointer-events-none">
+        40%
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-lime text-charcoal px-4 py-1.5 rounded-full text-[11px] font-extrabold tracking-[0.22em] uppercase">
+            <span>MID-SEASON DROP</span>
+            <span>·</span>
+            <span>LIMITED ARCHIVE</span>
+          </div>
+
+          <h2 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-semibold leading-[0.92] tracking-tight">
+            UP TO 40% OFF
+          </h2>
+
+          <p class="text-lg sm:text-2xl font-serif italic text-ivory/90 max-w-xl">
+            "Your wardrobe called. It wants an upgrade."
+          </p>
+
+          <p class="text-sm text-ivory/80 max-w-md leading-relaxed">
+            Selected runway samples, structured outerwear, and signature satin silhouettes at archive pricing for a limited window.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a href="#new-arrivals" class="inline-flex items-center gap-3 bg-lime text-charcoal px-8 py-4 rounded-full text-xs font-extrabold tracking-[0.2em] uppercase hover:bg-ivory transition-all shadow-xl">
+              <span>SHOP THE SALE</span>
+              <span>→</span>
+            </a>
+            <span class="text-xs tracking-[0.18em] uppercase text-ivory/80 font-mono">CODE: ERA40 AUTO-APPLIED</span>
+          </div>
+        </div>
+
+        <!-- Overlapping Fashion Campaign Image -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="relative w-72 sm:w-80 rounded-3xl overflow-hidden border-4 border-ivory/30 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+            <img 
+              src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85" 
+              alt="Mid-Season Archive Sale" 
+              class="w-full h-96 object-cover"
+            />
+            <div class="absolute bottom-3 left-3 right-3 bg-charcoal/85 backdrop-blur-md text-ivory p-3.5 rounded-2xl flex items-center justify-between">
+              <div>
+                <p class="text-[10px] text-lime uppercase tracking-widest">ARCHIVE PICK</p>
+                <p class="text-xs font-semibold">Crimson Mesh Trench</p>
+              </div>
+              <div class="text-right">
+                <span class="text-[11px] line-through text-ivory/50 block">₹5,499</span>
+                <span class="text-sm font-bold text-lime">₹3,299</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       13. FEATURED COLLECTION (THE AFTER HOURS)
+  =========================================== -->
+  <section id="featured-collection" class="py-20 sm:py-28 bg-charcoal text-ivory relative overflow-hidden">
+    <!-- Subtle ambient gradient -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-cobalt/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <!-- Top Editorial Metadata Bar -->
+      <div class="flex flex-wrap items-center justify-between text-[11px] tracking-[0.25em] uppercase text-ivory/50 border-b border-white/10 pb-5 mb-12">
+        <span>CAMPAIGN FILM &amp; LOOKBOOK № 07</span>
+        <span>SHOT ON LOCATION · MUMBAI / TOKYO</span>
+        <span>22:00 HRS — 04:00 HRS</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Asymmetric Dual Image Composition (7 Cols) -->
+        <div class="lg:col-span-7 relative">
+          <div class="relative rounded-[2rem] overflow-hidden aspect-[16/11] border border-white/15 shadow-2xl">
+            <img 
+              src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=85" 
+              alt="The After Hours Collection" 
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-charcoal/70 via-transparent to-transparent"></div>
+            <div class="absolute top-5 left-5 bg-charcoal/80 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] tracking-[0.25em] uppercase text-lavender border border-white/10">
+              LIMITED EDITORIAL CAPSULE
+            </div>
+          </div>
+
+          <!-- Overlapping Secondary Portrait Card -->
+          <div class="hidden sm:block absolute -bottom-10 right-6 w-56 rounded-2xl overflow-hidden border-2 border-ivory/20 shadow-2xl bg-obsidian">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" 
+              alt="After Hours Satin Detail" 
+              class="w-full h-44 object-cover"
+            />
+            <div class="p-3 text-[11px]">
+              <span class="text-lavender font-mono">LOOK 04 //</span>
+              <p class="font-serif italic text-base text-ivory">Liquid Metallic Bias Slip</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Copy Block (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6 lg:pl-6">
+          <span class="text-xs font-bold tracking-[0.3em] uppercase text-lavender block">AUTUMN / WINTER NOCTURNE</span>
+          
+          <h2 class="font-serif text-5xl sm:text-6xl xl:text-7xl font-semibold leading-[0.94] tracking-tight">
+            THE AFTER <br/>
+            <span class="italic font-normal text-lavender">HOURS</span> <br/>
+            COLLECTION
+          </h2>
+
+          <p class="font-serif italic text-2xl text-ivory/90">
+            "Designed for nights that don't end early."
+          </p>
+
+          <p class="text-sm text-ivory/70 leading-relaxed">
+            Liquid satins, light-reactive metallic weaves, and razor-sharp smoking blazers tailored for low-lit lounges, gallery openings, and rooftop horizons.
+          </p>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a href="#new-arrivals" class="inline-flex items-center gap-3 bg-ivory text-charcoal px-8 py-4 rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-lime transition-all">
+              <span>EXPLORE COLLECTION</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       14. COLLECTION GRID (ASYMMETRIC MASONRY)
+  =========================================== -->
+  <section class="py-20 sm:py-28 max-w-[1440px] mx-auto px-4 sm:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+      <div>
+        <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-cobalt block mb-2">MOODBOARDS &amp; ARCHIVES</span>
+        <h2 class="font-serif text-4xl sm:text-6xl font-semibold tracking-tight">THE SIX PILLARS</h2>
+      </div>
+      <p class="text-xs uppercase tracking-[0.2em] text-charcoal/60">ASYMMETRIC CURATION · 2026 EDITIONS</p>
+    </div>
+
+    <!-- Asymmetric Bento/Masonry Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[280px]">
+      
+      <!-- 1. Large Image: CITY AFTER DARK (7 cols) -->
+      <a href="#new-arrivals" class="group md:col-span-7 relative rounded-3xl overflow-hidden bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" alt="City After Dark" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-lime block mb-1">STORY 01</span>
+            <h3 class="font-serif text-3xl sm:text-4xl font-semibold">CITY AFTER DARK</h3>
+          </div>
+          <span class="w-11 h-11 rounded-full bg-ivory/15 backdrop-blur-md text-ivory flex items-center justify-center group-hover:bg-lime group-hover:text-charcoal transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- 2. Small Image: SOFT REBELLION (5 cols) -->
+      <a href="#new-arrivals" class="group md:col-span-5 relative rounded-3xl overflow-hidden bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Soft Rebellion" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-lavender block mb-1">STORY 02</span>
+            <h3 class="font-serif text-3xl font-semibold">SOFT REBELLION</h3>
+          </div>
+          <span class="w-11 h-11 rounded-full bg-ivory/15 backdrop-blur-md text-ivory flex items-center justify-center group-hover:bg-lavender group-hover:text-charcoal transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- 3. Tall Image: URBAN NOMAD (4 cols, 2 rows) -->
+      <a href="#new-arrivals" class="group md:col-span-4 md:row-span-2 relative rounded-3xl overflow-hidden bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80" alt="Urban Nomad" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-coral block mb-1">STORY 03 · UTILITY</span>
+            <h3 class="font-serif text-4xl font-semibold">URBAN NOMAD</h3>
+          </div>
+          <span class="w-11 h-11 rounded-full bg-ivory/15 backdrop-blur-md text-ivory flex items-center justify-center group-hover:bg-coral group-hover:text-ivory transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- 4. Editorial Manifesto Text Panel + OFF-DUTY (4 cols) -->
+      <a href="#new-arrivals" class="group md:col-span-4 relative rounded-3xl overflow-hidden bg-lavender text-charcoal p-7 flex flex-col justify-between border border-charcoal/10">
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-bold tracking-[0.25em] uppercase bg-charcoal text-ivory px-3 py-1 rounded-full">STORY 04</span>
+          <span class="font-serif italic text-xl">Relaxed Studio</span>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-charcoal/70 mb-1">ELEVATED LOUNGE &amp; KNITS</p>
+          <h3 class="font-serif text-4xl font-bold tracking-tight">OFF-DUTY</h3>
+          <p class="text-xs text-charcoal/80 mt-2">Heavyweight loopback cotton &amp; unconstructed tailoring.</p>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-charcoal/15">
+          <span class="text-xs font-bold uppercase tracking-wider">EXPLORE 24 PIECES</span>
+          <span class="group-hover:translate-x-1.5 transition-transform font-bold">→</span>
+        </div>
+      </a>
+
+      <!-- 5. Small Image: NEW ROMANCE (4 cols) -->
+      <a href="#new-arrivals" class="group md:col-span-4 relative rounded-3xl overflow-hidden bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80" alt="New Romance" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-lime block mb-1">STORY 05</span>
+            <h3 class="font-serif text-3xl font-semibold">NEW ROMANCE</h3>
+          </div>
+          <span class="w-11 h-11 rounded-full bg-ivory/15 backdrop-blur-md text-ivory flex items-center justify-center group-hover:bg-lime group-hover:text-charcoal transition-all">→</span>
+        </div>
+      </a>
+
+      <!-- 6. Wide Image: THE ESSENTIALS (8 cols) -->
+      <a href="#new-arrivals" class="group md:col-span-8 relative rounded-3xl overflow-hidden bg-charcoal">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80" alt="The Essentials" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/30 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between text-ivory">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-lime block mb-1">STORY 06 · FOUNDATION WARDROBE</span>
+            <h3 class="font-serif text-4xl font-semibold">THE ESSENTIALS</h3>
+            <p class="text-xs text-ivory/75 mt-1">Architectural tees, tailored trousers, and daily uniform staples.</p>
+          </div>
+          <span class="w-11 h-11 rounded-full bg-ivory text-charcoal flex items-center justify-center group-hover:bg-lime transition-all">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       15. "SHOP THE LOOK" INTERACTIVE HOTSPOTS
+  =========================================== -->
+  <section class="py-20 sm:py-24 bg-cream border-y border-charcoal/10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-cobalt block mb-2">INTERACTIVE STYLING STUDIO</span>
+        <h2 class="font-serif text-4xl sm:text-6xl font-semibold tracking-tight">SHOP THE COMPLETE LOOK</h2>
+        <p class="text-sm text-charcoal/70 mt-2">Tap any pulsing hotspot on the model to inspect the piece and add it directly to your bag.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Full Outfit Interactive Image with 4 Hotspots (7 Cols) -->
+        <div class="lg:col-span-7 relative rounded-[2.2rem] overflow-hidden shadow-2xl border border-charcoal/15 aspect-[4/5] max-h-[680px] w-full bg-charcoal">
+          <img 
+            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85" 
+            alt="Interactive Shop The Look Model" 
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-charcoal/15"></div>
+
+          <!-- Hotspot 1: Jacket -->
+          <button 
+            onclick="selectHotspot(0)" 
+            style="top: 28%; left: 38%;" 
+            class="hotspot-dot absolute w-9 h-9 -ml-4 -mt-4 rounded-full bg-lime text-charcoal font-bold text-xs flex items-center justify-center shadow-lg border-2 border-charcoal hover:scale-125 transition-transform"
+            aria-label="Inspect Jacket"
+          >1</button>
+
+          <!-- Hotspot 2: T-Shirt / Inner Top -->
+          <button 
+            onclick="selectHotspot(1)" 
+            style="top: 40%; left: 53%;" 
+            class="hotspot-dot absolute w-9 h-9 -ml-4 -mt-4 rounded-full bg-ivory text-charcoal font-bold text-xs flex items-center justify-center shadow-lg border-2 border-charcoal hover:scale-125 transition-transform"
+            aria-label="Inspect Top"
+          >2</button>
+
+          <!-- Hotspot 3: Cargo Pants -->
+          <button 
+            onclick="selectHotspot(2)" 
+            style="top: 66%; left: 46%;" 
+            class="hotspot-dot absolute w-9 h-9 -ml-4 -mt-4 rounded-full bg-ivory text-charcoal font-bold text-xs flex items-center justify-center shadow-lg border-2 border-charcoal hover:scale-125 transition-transform"
+            aria-label="Inspect Pants"
+          >3</button>
+
+          <!-- Hotspot 4: Footwear -->
+          <button 
+            onclick="selectHotspot(3)" 
+            style="top: 88%; left: 52%;" 
+            class="hotspot-dot absolute w-9 h-9 -ml-4 -mt-4 rounded-full bg-ivory text-charcoal font-bold text-xs flex items-center justify-center shadow-lg border-2 border-charcoal hover:scale-125 transition-transform"
+            aria-label="Inspect Shoes"
+          >4</button>
+
+          <div class="absolute bottom-5 left-5 bg-charcoal/85 backdrop-blur-md text-ivory px-4 py-2 rounded-full text-xs tracking-wider uppercase">
+            ● CLICK HOTSPOTS (1–4) TO INSPECT PIECES
+          </div>
+        </div>
+
+        <!-- Right: Active Hotspot Detail Card & Full Outfit List (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-ivory p-6 sm:p-8 rounded-3xl border border-charcoal/15 shadow-xl">
+            <div class="flex items-center justify-between text-xs uppercase tracking-widest text-cobalt font-bold mb-4">
+              <span id="hotspot-tag">SELECTED PIECE · HOTSPOT #1</span>
+              <span>IN STOCK</span>
+            </div>
+
+            <div class="flex gap-5 items-center">
+              <img id="hotspot-img" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80" alt="Selected Look Piece" class="w-28 h-36 rounded-2xl object-cover border border-charcoal/10" />
+              <div class="space-y-2 flex-1">
+                <span id="hotspot-cat" class="text-[11px] uppercase tracking-widest text-charcoal/60 block">OUTERWEAR</span>
+                <h3 id="hotspot-title" class="font-serif text-3xl font-semibold leading-tight">Cropped Utility Jacket</h3>
+                <p id="hotspot-price" class="text-xl font-bold text-charcoal">₹3,299</p>
+                <p id="hotspot-desc" class="text-xs text-charcoal/70 leading-relaxed">Structured technical cotton with matte gunmetal hardware and adjustable storm cuffs.</p>
+              </div>
+            </div>
+
+            <button id="hotspot-add-btn" onclick="addCurrentHotspotToCart()" class="mt-6 w-full bg-charcoal text-ivory py-4 rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-cobalt transition-colors">
+              ADD TO BAG — ₹3,299
+            </button>
+          </div>
+
+          <!-- Quick Selector Pills for all 4 items in the look -->
+          <div class="space-y-2.5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60">ALL PIECES IN THIS LOOK:</p>
+            <div class="grid grid-cols-2 gap-2.5">
+              <button onclick="selectHotspot(0)" class="hotspot-pill text-left p-3 rounded-2xl border border-charcoal bg-charcoal text-ivory text-xs flex items-center justify-between transition-all">
+                <span>1. Utility Jacket</span>
+                <span class="font-bold">₹3,299</span>
+              </button>
+              <button onclick="selectHotspot(1)" class="hotspot-pill text-left p-3 rounded-2xl border border-charcoal/15 bg-ivory text-charcoal text-xs flex items-center justify-between hover:border-charcoal transition-all">
+                <span>2. Studio Rib Tank</span>
+                <span class="font-bold">₹1,299</span>
+              </button>
+              <button onclick="selectHotspot(2)" class="hotspot-pill text-left p-3 rounded-2xl border border-charcoal/15 bg-ivory text-charcoal text-xs flex items-center justify-between hover:border-charcoal transition-all">
+                <span>3. Urban Cargo</span>
+                <span class="font-bold">₹2,799</span>
+              </button>
+              <button onclick="selectHotspot(3)" class="hotspot-pill text-left p-3 rounded-2xl border border-charcoal/15 bg-ivory text-charcoal text-xs flex items-center justify-between hover:border-charcoal transition-all">
+                <span>4. Monolith Mule</span>
+                <span class="font-bold">₹4,499</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       16. TRENDING NOW (HORIZONTAL SCROLL)
+  =========================================== -->
+  <section class="py-20 sm:py-24 max-w-[1440px] mx-auto px-4 sm:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-coral block mb-2">CULTURAL PULSE · 2026</span>
+        <h2 class="font-serif text-4xl sm:text-6xl font-semibold tracking-tight">WHAT'S EVERYWHERE RIGHT NOW</h2>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="scrollCarousel('trending-track', -320)" aria-label="Scroll Left" class="w-11 h-11 rounded-full border border-charcoal/20 flex items-center justify-center hover:bg-charcoal hover:text-ivory transition-colors">←</button>
+        <button onclick="scrollCarousel('trending-track', 320)" aria-label="Scroll Right" class="w-11 h-11 rounded-full border border-charcoal/20 flex items-center justify-center hover:bg-charcoal hover:text-ivory transition-colors">→</button>
+      </div>
+    </div>
+
+    <div id="trending-track" class="flex gap-5 overflow-x-auto no-scrollbar pb-4 snap-x">
+      <!-- 1. Oversized Silhouettes -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Oversized Silhouettes" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-lime text-charcoal px-3 py-1 rounded-full">#01 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Oversized Silhouettes</h3>
+          <p class="text-xs text-ivory/75 mt-1">Drop-shoulder proportions &amp; boxy cuts →</p>
+        </div>
+      </a>
+
+      <!-- 2. Cargo Pants -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80" alt="Cargo Pants" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-lavender text-charcoal px-3 py-1 rounded-full">#02 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Cargo Pants</h3>
+          <p class="text-xs text-ivory/75 mt-1">Multi-pocket technical utilitarian trousers →</p>
+        </div>
+      </a>
+
+      <!-- 3. Relaxed Tailoring -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Relaxed Tailoring" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-coral text-ivory px-3 py-1 rounded-full">#03 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Relaxed Tailoring</h3>
+          <p class="text-xs text-ivory/75 mt-1">Unstructured blazers &amp; fluid pleats →</p>
+        </div>
+      </a>
+
+      <!-- 4. Statement Shirts -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80" alt="Statement Shirts" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-cobalt text-ivory px-3 py-1 rounded-full">#04 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Statement Shirts</h3>
+          <p class="text-xs text-ivory/75 mt-1">Crisp poplin, sheer organza &amp; bold prints →</p>
+        </div>
+      </a>
+
+      <!-- 5. Monochrome Looks -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=600&q=80" alt="Monochrome Looks" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-ivory text-charcoal px-3 py-1 rounded-full">#05 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Monochrome Looks</h3>
+          <p class="text-xs text-ivory/75 mt-1">Head-to-toe tonal dressing →</p>
+        </div>
+      </a>
+
+      <!-- 6. Utility Jackets -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=600&q=80" alt="Utility Jackets" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-lime text-charcoal px-3 py-1 rounded-full">#06 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Utility Jackets</h3>
+          <p class="text-xs text-ivory/75 mt-1">Modular outerwear built for the street →</p>
+        </div>
+      </a>
+
+      <!-- 7. Contemporary Dresses -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Contemporary Dresses" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-lavender text-charcoal px-3 py-1 rounded-full">#07 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Contemporary Dresses</h3>
+          <p class="text-xs text-ivory/75 mt-1">Sculpted satin &amp; asymmetric hemlines →</p>
+        </div>
+      </a>
+
+      <!-- 8. Layered Outfits -->
+      <a href="#new-arrivals" class="min-w-[270px] sm:min-w-[300px] snap-start group rounded-3xl overflow-hidden bg-charcoal text-ivory relative h-96 flex flex-col justify-between p-6">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Layered Outfits" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"></div>
+        <span class="relative z-10 self-start text-[10px] font-bold uppercase tracking-widest bg-coral text-ivory px-3 py-1 rounded-full">#08 TREND</span>
+        <div class="relative z-10">
+          <h3 class="font-serif text-3xl italic">Layered Outfits</h3>
+          <p class="text-xs text-ivory/75 mt-1">Transitional textures &amp; proportions →</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       17. BEST SELLERS ("THE ONES EVERYONE WANTS")
+       Distinct Editorial Treatment: Numbered Gallery Ledger Cards
+  =========================================== -->
+  <section class="py-20 sm:py-24 bg-ivory border-t border-charcoal/10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
+        <div>
+          <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-cobalt block mb-2">MOST COVETED · VERIFIED REVIEWS</span>
+          <h2 class="font-serif text-4xl sm:text-6xl font-semibold tracking-tight">THE ONES EVERYONE WANTS</h2>
+        </div>
+        <p class="text-xs uppercase tracking-[0.2em] text-charcoal/60">RANKED BY REPEAT ORDERS &amp; CLIENT RATINGS</p>
+      </div>
+
+      <!-- Distinct Editorial Horizontal Split Cards (2x2 Grid on Desktop) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-7">
+        
+        <!-- Bestseller 01 -->
+        <div class="group bg-cream rounded-3xl p-5 sm:p-6 border border-charcoal/10 hover:border-charcoal transition-all flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+          <div class="relative w-full sm:w-52 h-64 rounded-2xl overflow-hidden bg-charcoal shrink-0">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Atelier Structured Blazer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-lime text-charcoal text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">BESTSELLER</span>
+          </div>
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex items-center justify-between">
+              <span class="font-serif italic text-3xl text-charcoal/30 font-bold">№ 01</span>
+              <div class="flex items-center gap-1 text-xs font-semibold">
+                <span class="text-coral">★★★★★</span>
+                <span>4.9</span>
+                <span class="text-charcoal/50">(318 reviews)</span>
+              </div>
+            </div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 block">WOMEN · TAILORING</span>
+            <h3 class="font-serif text-3xl font-semibold">Atelier Oversized Blazer</h3>
+            <p class="text-xs text-charcoal/70 leading-relaxed">Signature double-breasted wool-blend silhouette with internal cinch strap.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-charcoal/10">
+              <span class="text-xl font-bold">₹4,299</span>
+              <button onclick="addToCart('Atelier Oversized Blazer', 4299, 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=300&q=80')" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-cobalt transition-colors">
+                QUICK ADD +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bestseller 02 -->
+        <div class="group bg-cream rounded-3xl p-5 sm:p-6 border border-charcoal/10 hover:border-charcoal transition-all flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+          <div class="relative w-full sm:w-52 h-64 rounded-2xl overflow-hidden bg-charcoal shrink-0">
+            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=600&q=80" alt="Heavyweight Boxy Hoodie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-lime text-charcoal text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">BESTSELLER</span>
+          </div>
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex items-center justify-between">
+              <span class="font-serif italic text-3xl text-charcoal/30 font-bold">№ 02</span>
+              <div class="flex items-center gap-1 text-xs font-semibold">
+                <span class="text-coral">★★★★★</span>
+                <span>4.95</span>
+                <span class="text-charcoal/50">(412 reviews)</span>
+              </div>
+            </div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 block">UNISEX · STREET STUDIO</span>
+            <h3 class="font-serif text-3xl font-semibold">500GSM Architect Hoodie</h3>
+            <p class="text-xs text-charcoal/70 leading-relaxed">Ultra-dense brushed organic terry with drop shoulders and no-drawstring hood.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-charcoal/10">
+              <span class="text-xl font-bold">₹2,899</span>
+              <button onclick="addToCart('500GSM Architect Hoodie', 2899, 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=300&q=80')" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-cobalt transition-colors">
+                QUICK ADD +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bestseller 03 -->
+        <div class="group bg-cream rounded-3xl p-5 sm:p-6 border border-charcoal/10 hover:border-charcoal transition-all flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+          <div class="relative w-full sm:w-52 h-64 rounded-2xl overflow-hidden bg-charcoal shrink-0">
+            <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=80" alt="Baggy Darted Selvedge Denim" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-lime text-charcoal text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">BESTSELLER</span>
+          </div>
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex items-center justify-between">
+              <span class="font-serif italic text-3xl text-charcoal/30 font-bold">№ 03</span>
+              <div class="flex items-center gap-1 text-xs font-semibold">
+                <span class="text-coral">★★★★★</span>
+                <span>4.8</span>
+                <span class="text-charcoal/50">(276 reviews)</span>
+              </div>
+            </div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 block">DENIM · ARCHIVE WASH</span>
+            <h3 class="font-serif text-3xl font-semibold">Darted Wide-Leg Jeans</h3>
+            <p class="text-xs text-charcoal/70 leading-relaxed">14oz vintage indigo denim with curved knee seams and floor-pooling hem.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-charcoal/10">
+              <span class="text-xl font-bold">₹3,199</span>
+              <button onclick="addToCart('Darted Wide-Leg Jeans', 3199, 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=300&q=80')" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-cobalt transition-colors">
+                QUICK ADD +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bestseller 04 -->
+        <div class="group bg-cream rounded-3xl p-5 sm:p-6 border border-charcoal/10 hover:border-charcoal transition-all flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+          <div class="relative w-full sm:w-52 h-64 rounded-2xl overflow-hidden bg-charcoal shrink-0">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Sculpted Crescent Crossbody" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-3 left-3 bg-lime text-charcoal text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">BESTSELLER</span>
+          </div>
+          <div class="flex-1 space-y-3 w-full">
+            <div class="flex items-center justify-between">
+              <span class="font-serif italic text-3xl text-charcoal/30 font-bold">№ 04</span>
+              <div class="flex items-center gap-1 text-xs font-semibold">
+                <span class="text-coral">★★★★★</span>
+                <span>4.9</span>
+                <span class="text-charcoal/50">(194 reviews)</span>
+              </div>
+            </div>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-charcoal/60 block">ACCESSORIES · LEATHER GOODS</span>
+            <h3 class="font-serif text-3xl font-semibold">Sculpted Crescent Bag</h3>
+            <p class="text-xs text-charcoal/70 leading-relaxed">Full-grain vegan cactus leather with brushed silver buckle and suede lining.</p>
+            <div class="pt-2 flex items-center justify-between border-t border-charcoal/10">
+              <span class="text-xl font-bold">₹2,499</span>
+              <button onclick="addToCart('Sculpted Crescent Bag', 2499, 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=300&q=80')" class="bg-charcoal text-ivory px-5 py-2.5 rounded-full text-[11px] font-bold tracking-widest uppercase hover:bg-cobalt transition-colors">
+                QUICK ADD +
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       18. LIMITED DROP (48 HOURS. ONE DROP.)
+  =========================================== -->
+  <section class="py-24 bg-charcoal text-ivory relative overflow-hidden border-t border-white/10">
+    <!-- Subtle Lime & Cobalt Glow -->
+    <div class="absolute -bottom-24 left-1/3 w-96 h-96 bg-lime/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Typography & Live Countdown Timer (7 Cols) -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-white/15">
+            <span class="w-2 h-2 rounded-full bg-lime animate-ping"></span>
+            <span class="text-[11px] font-bold tracking-[0.25em] uppercase text-lime">VAULT RELEASE · SERIALIZED 1 OF 250</span>
+          </div>
+
+          <h2 class="font-serif text-6xl sm:text-8xl xl:text-[104px] font-semibold leading-[0.88] tracking-tight">
+            48 HOURS. <br/>
+            <span class="italic font-normal text-lime">ONE DROP.</span>
+          </h2>
+
+          <p class="text-base sm:text-lg text-ivory/75 max-w-xl leading-relaxed">
+            Once the clock hits zero, the **Chrome-Weave Modular Parka** enters the permanent archive. Never restocked. Individually numbered inside the storm placket.
+          </p>
+
+          <!-- Live Countdown Blocks -->
+          <div class="grid grid-cols-4 gap-3 sm:gap-5 max-w-lg">
+            <div class="bg-obsidian border border-white/15 rounded-2xl p-4 text-center">
+              <span id="cd-days" class="font-serif text-4xl sm:text-5xl font-bold text-ivory block">01</span>
+              <span class="text-[10px] tracking-[0.25em] uppercase text-ivory/50 mt-1 block">Days</span>
+            </div>
+            <div class="bg-obsidian border border-white/15 rounded-2xl p-4 text-center">
+              <span id="cd-hours" class="font-serif text-4xl sm:text-5xl font-bold text-ivory block">23</span>
+              <span class="text-[10px] tracking-[0.25em] uppercase text-ivory/50 mt-1 block">Hours</span>
+            </div>
+            <div class="bg-obsidian border border-white/15 rounded-2xl p-4 text-center">
+              <span id="cd-mins" class="font-serif text-4xl sm:text-5xl font-bold text-ivory block">48</span>
+              <span class="text-[10px] tracking-[0.25em] uppercase text-ivory/50 mt-1 block">Minutes</span>
+            </div>
+            <div class="bg-obsidian border border-lime/40 rounded-2xl p-4 text-center">
+              <span id="cd-secs" class="font-serif text-4xl sm:text-5xl font-bold text-lime block">19</span>
+              <span class="text-[10px] tracking-[0.25em] uppercase text-lime/80 mt-1 block">Seconds</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <button onclick="addToCart('Chrome-Weave Modular Parka (Limited Edition)', 6499, 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80')" class="bg-lime text-charcoal px-9 py-4 rounded-full text-xs font-extrabold tracking-[0.2em] uppercase hover:bg-ivory transition-all shadow-xl">
+              CLAIM YOUR PIECE — ₹6,499
+            </button>
+            <span class="text-xs font-mono text-ivory/60">ONLY 37 / 250 UNITS REMAINING</span>
+          </div>
+        </div>
+
+        <!-- Right: Spotlight Limited Product Card (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-[2.2rem] overflow-hidden border border-white/20 bg-obsidian p-6 shadow-2xl">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5]">
+              <img 
+                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85" 
+                alt="Chrome-Weave Modular Parka" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 right-4 bg-charcoal/90 backdrop-blur-md text-lime px-3.5 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest border border-lime/30">
+                EDITION #213 / 250
+              </div>
+            </div>
+            <div class="mt-5 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.22em] text-ivory/50">CAPSULE ZERO</p>
+                <h3 class="font-serif text-2xl text-ivory">Chrome-Weave Modular Parka</h3>
+              </div>
+              <span class="text-xl font-bold text-lime">₹6,499</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EDITORIAL FOOTER & VIP NEWSLETTER
+  =========================================== -->
+  <footer class="bg-obsidian text-ivory pt-20 pb-12 border-t border-white/10">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+        <!-- Brand Manifesto & Newsletter (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-lime text-charcoal flex items-center justify-center font-serif italic text-xl font-bold">V</div>
+            <span class="font-serif text-3xl font-bold tracking-[0.2em]">VELORA</span>
+          </div>
+          <p class="font-serif italic text-2xl text-ivory/90">"WEAR YOUR NEXT ERA."</p>
+          <p class="text-xs text-ivory/60 max-w-sm leading-relaxed">
+            Join the Inner Atelier list for early access to serialized 48-hour drops, private archive sales, and ₹500 off your first order.
+          </p>
+          <form onsubmit="event.preventDefault(); showToast('Welcome to VELORA Inner Atelier — Check your inbox!'); this.reset();" class="flex gap-2 max-w-md">
+            <input type="email" required placeholder="Enter your email address..." class="flex-1 bg-white/5 border border-white/15 rounded-full px-5 py-3.5 text-xs text-ivory placeholder:text-ivory/40 focus:outline-none focus:border-lime" />
+            <button type="submit" class="bg-ivory text-charcoal px-6 py-3.5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-lime transition-colors">
+              JOIN →
+            </button>
+          </form>
+        </div>
+
+        <!-- Navigation Columns (7 Cols) -->
+        <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 text-xs">
+          <div class="space-y-3">
+            <p class="text-[10px] font-bold tracking-[0.25em] uppercase text-lime">DEPARTMENTS</p>
+            <ul class="space-y-2.5 text-ivory/70">
+              <li><a href="#new-arrivals" class="hover:text-ivory">Women's Ready-to-Wear</a></li>
+              <li><a href="#new-arrivals" class="hover:text-ivory">Men's Studio</a></li>
+              <li><a href="#featured-collection" class="hover:text-ivory">The After Hours</a></li>
+              <li><a href="#categories" class="hover:text-ivory">Raw &amp; Washed Denim</a></li>
+              <li><a href="#special-offer" class="hover:text-coral text-coral">Mid-Season Archive Sale</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <p class="text-[10px] font-bold tracking-[0.25em] uppercase text-lavender">CLIENT SERVICES</p>
+            <ul class="space-y-2.5 text-ivory/70">
+              <li><a href="#navbar" class="hover:text-ivory">Track Your Order</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">7-Day Express Returns</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Size &amp; Fit Architecture</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Fabric Care Guide</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Book a Private Styling</a></li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <p class="text-[10px] font-bold tracking-[0.25em] uppercase text-coral">THE HOUSE</p>
+            <ul class="space-y-2.5 text-ivory/70">
+              <li><a href="#navbar" class="hover:text-ivory">About VELORA Atelier</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Sustainability &amp; Mills</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Campaign Archives</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Flagship Boutiques</a></li>
+              <li><a href="#navbar" class="hover:text-ivory">Press &amp; Lookbooks</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oversized Watermark Wordmark & Copyright -->
+      <div class="pt-10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ivory/40 gap-4">
+        <p>© 2026 VELORA ATELIER PVT. LTD. ALL RIGHTS RESERVED.</p>
+        <div class="flex gap-6 uppercase tracking-widest">
+          <span>UPI · CARDS · COD</span>
+          <span>PRIVACY</span>
+          <span>TERMS</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SLIDE-OUT SHOPPING BAG DRAWER
+  =========================================== -->
+  <div id="cart-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-charcoal/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity"></div>
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-ivory text-charcoal z-50 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col justify-between border-l border-charcoal/10">
+    <!-- Top Header -->
+    <div class="p-6 border-b border-charcoal/10 flex items-center justify-between">
+      <div>
+        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-cobalt block">YOUR SELECTION</span>
+        <h3 class="font-serif text-3xl font-semibold">SHOPPING BAG</h3>
+      </div>
+      <button onclick="toggleCart()" class="w-10 h-10 rounded-full bg-charcoal/5 flex items-center justify-center hover:bg-charcoal hover:text-ivory transition-colors">✕</button>
+    </div>
+
+    <!-- Free shipping threshold bar -->
+    <div class="px-6 py-3 bg-cream text-xs flex items-center justify-between border-b border-charcoal/10">
+      <span id="shipping-status" class="font-medium">✓ You unlocked FREE Express Shipping!</span>
+      <span class="font-bold text-cobalt">₹2,999+</span>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div id="cart-items" class="p-6 space-y-4 overflow-y-auto flex-1"></div>
+
+    <!-- Cart Footer -->
+    <div class="p-6 border-t border-charcoal/10 bg-cream/60 space-y-4">
+      <div class="flex items-center justify-between text-sm">
+        <span class="uppercase tracking-widest text-xs text-charcoal/60">ESTIMATED SUBTOTAL</span>
+        <span id="cart-subtotal" class="text-xl font-bold">₹5,698</span>
+      </div>
+      <button onclick="showToast('Proceeding to VELORA Express Checkout...'); toggleCart();" class="w-full bg-charcoal text-ivory py-4 rounded-full text-xs font-bold tracking-[0.2em] uppercase hover:bg-cobalt transition-colors">
+        PROCEED TO CHECKOUT →
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       FLOATING TOAST NOTIFICATION
+  =========================================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-charcoal text-ivory px-5 py-3.5 rounded-2xl shadow-2xl border border-white/15 flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <span class="w-2.5 h-2.5 rounded-full bg-lime"></span>
+    <span id="toast-msg" class="text-xs font-medium tracking-wide">Added to your bag</span>
+  </div>
+
+  <!-- ==========================================
+       INTERACTIVE JAVASCRIPT ENGINE
+  =========================================== -->
+  <script>
+    // 1. NEW ARRIVALS PRODUCT DATASET (Exact required Women & Men items in INR + live color variants)
+    const newArrivalsData = [
+      {
+        id: 'na-1',
+        name: 'Sculpted Satin Dress',
+        gender: 'Women',
+        category: 'Women · Evening',
+        price: 3499,
+        originalPrice: 4499,
+        discount: '-22%',
+        badge: 'NEW',
+        rating: '4.9',
+        colors: [
+          { name: 'Electric Cobalt', hex: '#2D46FF', img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Crimson Noir', hex: '#4A1525', img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Pearl Ivory', hex: '#EAE5D9', img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-2',
+        name: 'Oversized Studio Shirt',
+        gender: 'Women',
+        category: 'Women · Shirting',
+        price: 2199,
+        originalPrice: null,
+        discount: null,
+        badge: 'NEW',
+        rating: '4.8',
+        colors: [
+          { name: 'Crisp Ivory', hex: '#F7F4EF', img: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Digital Lavender', hex: '#C8B6FF', img: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Obsidian', hex: '#0F0F12', img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-3',
+        name: 'Urban Cargo Trousers',
+        gender: 'Women',
+        category: 'Women · Bottoms',
+        price: 2799,
+        originalPrice: 3999,
+        discount: '-30%',
+        badge: '-30%',
+        rating: '4.9',
+        colors: [
+          { name: 'Charcoal Olive', hex: '#2B2D2F', img: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Sandstone', hex: '#D8CFC2', img: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-4',
+        name: 'Cropped Utility Jacket',
+        gender: 'Women',
+        category: 'Women · Outerwear',
+        price: 3299,
+        originalPrice: null,
+        discount: null,
+        badge: 'NEW',
+        rating: '5.0',
+        colors: [
+          { name: 'Obsidian Black', hex: '#0F0F12', img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Sunset Coral', hex: '#FF5338', img: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-5',
+        name: 'Relaxed Linen Shirt',
+        gender: 'Men',
+        category: 'Men · Shirting',
+        price: 2399,
+        originalPrice: 2999,
+        discount: '-20%',
+        badge: '-20%',
+        rating: '4.8',
+        colors: [
+          { name: 'Warm Ecru', hex: '#E5DEC9', img: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Cobalt Blue', hex: '#2D46FF', img: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-6',
+        name: 'Essential Oversized Tee',
+        gender: 'Men',
+        category: 'Men · Tops',
+        price: 1499,
+        originalPrice: null,
+        discount: null,
+        badge: 'NEW',
+        rating: '4.9',
+        colors: [
+          { name: 'Washed Charcoal', hex: '#1C1C21', img: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Acid Lime', hex: '#D4FF33', img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Warm Ivory', hex: '#F7F4EF', img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-7',
+        name: 'Street Utility Jacket',
+        gender: 'Men',
+        category: 'Men · Outerwear',
+        price: 3499,
+        originalPrice: 4499,
+        discount: '-22%',
+        badge: 'NEW',
+        rating: '4.9',
+        colors: [
+          { name: 'Tactical Onyx', hex: '#0F0F12', img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Cobalt Tech', hex: '#2D46FF', img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=700&q=80' }
+        ]
+      },
+      {
+        id: 'na-8',
+        name: 'Wide-Leg Cargo',
+        gender: 'Men',
+        category: 'Men · Bottoms',
+        price: 2699,
+        originalPrice: null,
+        discount: null,
+        badge: 'NEW',
+        rating: '4.7',
+        colors: [
+          { name: 'Slate Graphite', hex: '#2A2B30', img: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80' },
+          { name: 'Raw Khaki', hex: '#C5B8A5', img: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80' }
+        ]
+      }
+    ];
+
+    // Render New Arrivals Cards
+    function renderNewArrivals(filter = 'all') {
+      const container = document.getElementById('new-arrivals-track');
+      const filtered = filter === 'all' ? newArrivalsData : newArrivalsData.filter(item => item.gender === filter);
+
+      container.innerHTML = filtered.map(product => {
+        const badgeClass = product.badge.includes('-')
+          ? 'bg-coral text-ivory'
+          : 'bg-charcoal text-ivory';
+
+        const swatchesHTML = product.colors.map((col, idx) => `
+          <button 
+            onclick="swapProductColor('${product.id}', '${col.img}', '${col.name}', this)"
+            title="${col.name}"
+            style="background-color: ${col.hex};"
+            class="w-4 h-4 rounded-full border border-charcoal/40 hover:scale-125 transition-transform ${idx === 0 ? 'ring-2 ring-offset-2 ring-charcoal' : ''}"
+          ></button>
+        `).join('');
+
+        return `
+          <article class="product-card min-w-[285px] sm:min-w-[320px] snap-start bg-ivory rounded-[2rem] p-3.5 border border-charcoal/10 hover:border-charcoal/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- Image Area -->
+            <div class="relative rounded-[1.5rem] overflow-hidden aspect-[4/5] bg-cream">
+              <img 
+                id="img-${product.id}" 
+                src="${product.colors[0].img}" 
+                alt="${product.name}" 
+                class="product-img w-full h-full object-cover transition-transform duration-500 ease-out"
+              />
+              
+              <!-- Top-left Badge -->
+              <span class="absolute top-3.5 left-3.5 ${badgeClass} text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-1 rounded-full shadow">
+                ${product.badge}
+              </span>
+
+              <!-- Top-right Wishlist Heart -->
+              <button 
+                onclick="toggleWishlist(this, '${product.name}')" 
+                aria-label="Add to Wishlist"
+                class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-ivory/85 backdrop-blur-md text-charcoal flex items-center justify-center hover:bg-coral hover:text-ivory transition-colors shadow"
+              >
+                ♡
+              </button>
+
+              <!-- Hover Reveal Quick Add Bar -->
+              <div class="quick-add-bar absolute bottom-3 left-3 right-3 translate-y-4 opacity-0 transition-all duration-300">
+                <button 
+                  onclick="addToCart('${product.name}', ${product.price}, '${product.colors[0].img}')"
+                  class="w-full bg-charcoal/95 backdrop-blur-md text-ivory py-3 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-cobalt transition-colors shadow-lg"
+                >
+                  QUICK ADD +
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Footer Metadata -->
+            <div class="pt-4 px-2 pb-1 space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-charcoal/60 uppercase tracking-wider">
+                <span>${product.category}</span>
+                <span class="font-semibold text-charcoal">★ ${product.rating}</span>
+              </div>
+
+              <h3 class="font-serif text-2xl font-semibold text-charcoal leading-tight">${product.name}</h3>
+
+              <!-- Price Row -->
+              <div class="flex items-center gap-2.5 pt-0.5">
+                <span class="text-base font-bold text-charcoal">₹${product.price.toLocaleString('en-IN')}</span>
+                ${product.originalPrice ? `<span class="text-xs line-through text-charcoal/45">₹${product.originalPrice.toLocaleString('en-IN')}</span>` : ''}
+                ${product.discount ? `<span class="text-[10px] font-bold text-coral uppercase">${product.discount}</span>` : ''}
+              </div>
+
+              <!-- Color Variant Circles -->
+              <div class="pt-2 flex items-center justify-between border-t border-charcoal/10">
+                <div class="flex items-center gap-2">
+                  ${swatchesHTML}
+                </div>
+                <span id="color-label-${product.id}" class="text-[10px] text-charcoal/55 uppercase tracking-wider">${product.colors[0].name}</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Swap product image & active ring when clicking a color variant circle
+    function swapProductColor(productId, newImgUrl, colorName, btnEl) {
+      const imgEl = document.getElementById(`img-${productId}`);
+      const labelEl = document.getElementById(`color-label-${productId}`);
+      if (imgEl) imgEl.src = newImgUrl;
+      if (labelEl) labelEl.textContent = colorName;
+
+      const siblings = btnEl.parentElement.querySelectorAll('button');
+      siblings.forEach(b => b.classList.remove('ring-2', 'ring-offset-2', 'ring-charcoal'));
+      btnEl.classList.add('ring-2', 'ring-offset-2', 'ring-charcoal');
+    }
+
+    // Filter tabs in New Arrivals
+    function filterNewArrivals(gender) {
+      ['all', 'Women', 'Men'].forEach(tab => {
+        const btn = document.getElementById(`tab-${tab}`);
+        if (tab === gender) {
+          btn.className = 'px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-charcoal text-ivory transition-all';
+        } else {
+          btn.className = 'px-5 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase bg-ivory text-charcoal border border-charcoal/15 hover:border-charcoal transition-all';
+        }
+      });
+      renderNewArrivals(gender);
+    }
+
+    // Horizontal Carousel Scroll Helper
+    function scrollCarousel(trackId, distance) {
+      const track = document.getElementById(trackId);
+      if (track) track.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+
+    // 2. SHOP THE LOOK INTERACTIVE HOTSPOTS
+    const lookHotspots = [
+      {
+        tag: 'SELECTED PIECE · HOTSPOT #1',
+        cat: 'OUTERWEAR',
+        title: 'Cropped Utility Jacket',
+        price: 3299,
+        desc: 'Structured technical cotton with matte gunmetal hardware and adjustable storm cuffs.',
+        img: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        tag: 'SELECTED PIECE · HOTSPOT #2',
+        cat: 'TOPS · ESSENTIAL',
+        title: 'Studio Ribbed Tank',
+        price: 1299,
+        desc: 'Heavyweight 320GSM organic rib knit engineered for a sculpted second-skin fit.',
+        img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        tag: 'SELECTED PIECE · HOTSPOT #3',
+        cat: 'BOTTOMS · UTILITY',
+        title: 'Urban Cargo Trousers',
+        price: 2799,
+        desc: 'Six-pocket architectural silhouette with adjustable ankle toggles and articulated knees.',
+        img: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        tag: 'SELECTED PIECE · HOTSPOT #4',
+        cat: 'FOOTWEAR',
+        title: 'Monolith Leather Mule',
+        price: 4499,
+        desc: 'Chunky vulcanized rubber lug sole paired with butter-soft square-toe calfskin upper.',
+        img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=400&q=80'
+      }
+    ];
+    let currentHotspotIndex = 0;
+
+    function selectHotspot(index) {
+      currentHotspotIndex = index;
+      const item = lookHotspots[index];
+      document.getElementById('hotspot-tag').textContent = item.tag;
+      document.getElementById('hotspot-cat').textContent = item.cat;
+      document.getElementById('hotspot-title').textContent = item.title;
+      document.getElementById('hotspot-price').textContent = `₹${item.price.toLocaleString('en-IN')}`;
+      document.getElementById('hotspot-desc').textContent = item.desc;
+      document.getElementById('hotspot-img').src = item.img;
+      document.getElementById('hotspot-add-btn').textContent = `ADD TO BAG — ₹${item.price.toLocaleString('en-IN')}`;
+
+      const pills = document.querySelectorAll('.hotspot-pill');
+      pills.forEach((pill, i) => {
+        if (i === index) {
+          pill.className = 'hotspot-pill text-left p-3 rounded-2xl border border-charcoal bg-charcoal text-ivory text-xs flex items-center justify-between transition-all';
+        } else {
+          pill.className = 'hotspot-pill text-left p-3 rounded-2xl border border-charcoal/15 bg-ivory text-charcoal text-xs flex items-center justify-between hover:border-charcoal transition-all';
+        }
+      });
+    }
+
+    function addCurrentHotspotToCart() {
+      const item = lookHotspots[currentHotspotIndex];
+      addToCart(item.title, item.price, item.img);
+    }
+
+    // 3. SHOPPING BAG DRAWER STATE
+    let cart = [
+      { name: 'Sculpted Satin Dress', price: 3499, img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=300&q=80', qty: 1 },
+      { name: 'Oversized Studio Shirt', price: 2199, img: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=300&q=80', qty: 1 }
+    ];
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const countEl = document.getElementById('cart-count');
+      const subtotalEl = document.getElementById('cart-subtotal');
+      const shipEl = document.getElementById('shipping-status');
+
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      countEl.textContent = totalQty;
+      subtotalEl.textContent = `₹${totalPrice.toLocaleString('en-IN')}`;
+
+      if (totalPrice >= 2999) {
+        shipEl.textContent = '✓ You unlocked FREE Express Shipping!';
+      } else {
+        const diff = 2999 - totalPrice;
+        shipEl.textContent = `Add ₹${diff.toLocaleString('en-IN')} more for FREE shipping`;
+      }
+
+      if (cart.length === 0) {
+        container.innerHTML = `<p class="text-sm text-charcoal/50 text-center py-16">Your VELORA bag is currently empty.</p>`;
+        return;
+      }
+
+      container.innerHTML = cart.map((item, idx) => `
+        <div class="flex gap-4 items-center bg-cream/60 p-3 rounded-2xl border border-charcoal/10">
+          <img src="${item.img}" alt="${item.name}" class="w-16 h-20 rounded-xl object-cover" />
+          <div class="flex-1">
+            <h4 class="font-serif text-lg font-semibold leading-tight">${item.name}</h4>
+            <p class="text-xs text-charcoal/60 mt-0.5">Qty: ${item.qty} · ₹${item.price.toLocaleString('en-IN')}</p>
+          </div>
+          <button onclick="removeFromCart(${idx})" class="text-xs text-charcoal/40 hover:text-coral p-2">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(name, price, img) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, img, qty: 1 });
+      }
+      renderCart();
+      showToast(`Added "${name}" to your bag`);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      const backdrop = document.getElementById('cart-backdrop');
+      const isOpen = !drawer.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0');
+        setTimeout(() => backdrop.classList.add('hidden'), 300);
+      } else {
+        backdrop.classList.remove('hidden');
+        setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+        drawer.classList.remove('translate-x-full');
+      }
+    }
+
+    // Wishlist Toggle
+    function toggleWishlist(btn, productName) {
+      const badge = document.getElementById('wishlist-badge');
+      badge.classList.remove('hidden');
+      if (btn.textContent.trim() === '♡') {
+        btn.textContent = '♥';
+        btn.classList.add('bg-coral', 'text-ivory');
+        showToast(`Saved "${productName}" to Wishlist`);
+      } else {
+        btn.textContent = '♡';
+        btn.classList.remove('bg-coral', 'text-ivory');
+      }
+    }
+
+    // Toast notification
+    let toastTimer;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toast-msg');
+      msg.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2800);
+    }
+
+    // 4. STICKY NAVBAR SCROLL MORPH
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 40) {
+        nav.classList.remove('py-5');
+        nav.classList.add('py-3', 'shadow-md');
+      } else {
+        nav.classList.add('py-5');
+        nav.classList.remove('py-3', 'shadow-md');
+      }
+    });
+
+    // 5. 48-HOUR LIVE COUNTDOWN TIMER
+    let remainingSeconds = (47 * 3600) + (48 * 60) + 19;
+    function updateCountdown() {
+      if (remainingSeconds <= 0) return;
+      remainingSeconds--;
+      const days = Math.floor(remainingSeconds / 86400);
+      const hours = Math.floor((remainingSeconds % 86400) / 3600);
+      const mins = Math.floor((remainingSeconds % 3600) / 60);
+      const secs = remainingSeconds % 60;
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNewArrivals('all');
+      renderCart();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+</body>
+</html>
